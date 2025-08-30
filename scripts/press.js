@@ -2,9 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   var pressMain = document.querySelector('.press-main');
   if (pressMain) {
-    setTimeout(function() {
-      pressMain.classList.add('animated');
-    }, 100);
+    pressMain.classList.add('animated');
   }
 
   // Reaction button logic

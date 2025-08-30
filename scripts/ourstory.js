@@ -4,8 +4,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 	var storyMain = document.querySelector('.story-main');
 	if (storyMain) {
-		setTimeout(function() {
-			storyMain.classList.add('animated');
-		}, 100); // slight delay for effect
+		storyMain.classList.add('animated');
 	}
 });
