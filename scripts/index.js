@@ -139,18 +139,25 @@ function createHamburger() {
 						// Clear navLinks first
 						navLinks.innerHTML = '';
 
-						// About Us
-						const aboutLi = document.createElement('li');
-						aboutLi.className = 'nav-dropdown';
-						aboutLi.innerHTML = `
-								<a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
-								<ul class="dropdown-menu">
-										<li><a href="ourstory.html"><i class="fas fa-history"></i> Our Story</a></li>
-										<li><a href="ourteam.html"><i class="fas fa-users"></i> Our Team</a></li>
-										
-										<li><a href="press.html"><i class="fas fa-newspaper"></i> Press</a></li>
-								</ul>
-						`;
+			// Home
+			const homeLi = document.createElement('li');
+			homeLi.className = 'nav-home';
+			homeLi.innerHTML = `
+			    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+			`;
+
+			// About Us
+			const aboutLi = document.createElement('li');
+			aboutLi.className = 'nav-dropdown';
+			aboutLi.innerHTML = `
+				<a href="#about">About Us <i class="fas fa-chevron-down"></i></a>
+				<ul class="dropdown-menu">
+					<li><a href="ourstory.html"><i class="fas fa-history"></i> Our Story</a></li>
+					<li><a href="ourteam.html"><i class="fas fa-users"></i> Our Team</a></li>
+                                        
+					<li><a href="press.html"><i class="fas fa-newspaper"></i> Press</a></li>
+				</ul>
+			`;
 
 						// Add dropdown open animation and 0.1s delay before navigation for About Us dropdown links
 						setTimeout(() => {
@@ -254,6 +261,7 @@ function createHamburger() {
 								}
 
 								// Append all links in order
+								navLinks.appendChild(homeLi);
 								navLinks.appendChild(aboutLi);
 								navLinks.appendChild(coursesLi);
 								navLinks.appendChild(programsLi);
