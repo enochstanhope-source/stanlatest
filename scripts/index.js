@@ -1,3 +1,15 @@
+// Image fade-in on load
+document.addEventListener('DOMContentLoaded', function() {
+	document.querySelectorAll('img[data-fade]').forEach(function(img) {
+		if (img.complete) {
+			img.classList.add('loaded');
+		} else {
+			img.addEventListener('load', function() {
+				img.classList.add('loaded');
+			});
+		}
+	});
+});
 // --- Hero Section: Continuous Right-to-Left Slider ---
 function startHeroSlider() {
 	const slider = document.querySelector('.slider-container');

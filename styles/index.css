@@ -1,3 +1,11 @@
+/* Fast image fade-in effect */
+img[data-fade] {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+img[data-fade].loaded {
+  opacity: 1;
+}
 @media (max-width: 768px) {
   .collections-2 {
     margin-top: -2rem !important;
