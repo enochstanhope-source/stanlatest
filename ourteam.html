@@ -23,7 +23,7 @@
       <nav>
         <div class="logo" style="display: none;">
           <a href="index.html">
-            <img src="images/polybay.png" alt="G-ONE Logo" width="40logo" height="40" />
+            <img src="images/polybay.png" alt="G-ONE Logo" width="40" height="40" loading="eager" decoding="async" data-fade />
           </a>
         </div>
         <ul class="nav-links">
@@ -41,54 +41,54 @@
         <p>Passionate professionals dedicated to your success.</p>
       </div>
         <div class="team-img-wrap">
-          <img src="images/me1.jpg" alt="Our Team" class="hero-img" loading="lazy">
+          <img src="images/me1.jpg" alt="Our Team" class="hero-img" loading="eager" decoding="async" data-fade>
       </div>
     </section>
     <section class="team-grid">
       <div class="team-member">
-    <img src="images/teammember1.jpg" alt="Chinonso Okafor" loading="lazy">
+  <img src="images/teammember1.jpg" alt="Chinonso Okafor" loading="lazy" decoding="async" data-fade>
         <div class="member-info">
           <h3>Chinonso Okafor</h3>
           <p>Chief Executive Officer</p>
         </div>
       </div>
       <div class="team-member">
-    <img src="images/teammember2.jpg" alt="Amina Bello" loading="lazy">
+  <img src="images/teammember2.jpg" alt="Amina Bello" loading="lazy" decoding="async" data-fade>
         <div class="member-info">
           <h3>Amina Bello</h3>
           <p>Head of Digital Skills</p>
         </div>
       </div>
       <div class="team-member">
-    <img src="images/teammember3.jpg" alt="Kwame Mensah" loading="lazy">
+  <img src="images/teammember3.jpg" alt="Kwame Mensah" loading="lazy" decoding="async" data-fade>
         <div class="member-info">
           <h3>Kwame Mensah</h3>
           <p>Community Engagement Lead</p>
         </div>
       </div>
       <div class="team-member">
-    <img src="images/teammember4.jpg" alt="Zanele Dlamini" loading="lazy">
+  <img src="images/teammember4.jpg" alt="Zanele Dlamini" loading="lazy" decoding="async" data-fade>
         <div class="member-info">
           <h3>Zanele Dlamini</h3>
           <p>Programs & Events Manager</p>
         </div>
       </div>
       <div class="team-member">
-    <img src="images/teammember5.jpg" alt="Tunde Adebayo" loading="lazy">
+  <img src="images/teammember5.jpg" alt="Tunde Adebayo" loading="lazy" decoding="async" data-fade>
         <div class="member-info">
           <h3>Tunde Adebayo</h3>
           <p>Technical Lead</p>
         </div>
       </div>
       <div class="team-member">
-    <img src="images/teammember6.jpg" alt="Fatoumata Diallo" loading="lazy">
+  <img src="images/teammember6.jpg" alt="Fatoumata Diallo" loading="lazy" decoding="async" data-fade>
         <div class="member-info">
           <h3>Fatoumata Diallo</h3>
           <p>Partnerships & Outreach</p>
         </div>
       </div>
       <div class="team-member">
-    <img src="images/teammember7.jpg" alt="Samuel Mugisha" loading="lazy">
+  <img src="images/teammember7.jpg" alt="Samuel Mugisha" loading="lazy" decoding="async" data-fade>
         <div class="member-info">
           <h3>Samuel Mugisha</h3>
           <p>Training Coordinator</p>
@@ -152,9 +152,9 @@
 
       <div class="footer-bottom">
         <div class="payment-methods">
-          <img src="images/visa.jpg" alt="Visa" />
-          <img src="images/mastercard.jpg" alt="Mastercard" />
-          <img src="images/verve.jpg" alt="Verve" />
+          <img src="images/visa.jpg" alt="Visa" loading="lazy" decoding="async" data-fade />
+          <img src="images/mastercard.jpg" alt="Mastercard" loading="lazy" decoding="async" data-fade />
+          <img src="images/verve.jpg" alt="Verve" loading="lazy" decoding="async" data-fade />
         </div>
         <div class="footer-info">
           <p>&copy; 2025 FPNO Skill Acquisition Hub. All rights reserved.</p>
@@ -168,3 +168,26 @@
     </footer>
 </body>
 </html>
+</html>
+<style>
+img[data-fade] {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+img[data-fade].loaded {
+  opacity: 1;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img[data-fade]').forEach(function(img) {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        img.classList.add('loaded');
+      });
+    }
+  });
+});
+</script>

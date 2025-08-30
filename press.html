@@ -23,7 +23,7 @@
       <nav>
         <div class="logo" style="display: none;">
           <a href="index.html">
-            <img src="images/polybay.png" alt="G-ONE Logo" width="40logo" height="40" />
+            <img src="images/polybay.png" alt="G-ONE Logo" width="40" height="40" loading="eager" decoding="async" data-fade />
           </a>
         </div>
         <ul class="nav-links">
@@ -40,13 +40,13 @@
         <p>Read the latest news and updates about us.</p>
       </div>
       <div class="press-img-wrap">
-        <img src="images/cam9.jpg" alt="Press" class="hero-img">
+  <img src="images/cam9.jpg" alt="Press" class="hero-img" loading="eager" decoding="async" data-fade>
       </div>
     </section>
     <section class="press-list">
       <div class="press-grid">
         <article class="press-item">
-          <img src="images/fa99.jpg" alt="EdTech Magazine">
+          <img src="images/fa99.jpg" alt="EdTech Magazine" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>Featured in EdTech Magazine</h3>
             <p>Our innovative approach to learning was highlighted in EdTech Magazine's July issue. <a href="#">Read more...</a></p>
@@ -59,7 +59,7 @@
           </div>
         </article>
         <article class="press-item">
-          <img src="images/fa32.jpg" alt="Community Impact Award">
+          <img src="images/fa32.jpg" alt="Community Impact Award" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>Community Impact Award</h3>
             <p>We received the Community Impact Award for our outreach programs. <a href="#">Read more...</a></p>
@@ -72,7 +72,7 @@
           </div>
         </article>
         <article class="press-item">
-          <img src="images/fa5.jpg" alt="Digital Skills Drive">
+          <img src="images/fa5.jpg" alt="Digital Skills Drive" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>Digital Skills Drive</h3>
             <p>We launched a digital skills drive for undergraduates. <a href="#">Read more...</a></p>
@@ -85,7 +85,7 @@
           </div>
         </article>
         <article class="press-item">
-          <img src="images/fa4.jpg" alt="Workshop Success">
+          <img src="images/fa4.jpg" alt="Workshop Success" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>Workshop Success</h3>
             <p>Our recent workshop was a huge success, empowering over 100 students. <a href="#">Read more...</a></p>
@@ -100,7 +100,7 @@
 
         <!-- New Articles: Collaborations, Updates, Skills, Events -->
         <article class="press-item">
-          <img src="images/fa6.jpg" alt="Collaboration with Google">
+          <img src="images/fa6.jpg" alt="Collaboration with Google" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>Collaboration with Google Africa</h3>
             <p>We are excited to announce a new partnership with Google Africa to provide advanced digital skills training. <a href="#">Read more...</a></p>
@@ -113,7 +113,7 @@
           </div>
         </article>
         <article class="press-item">
-          <img src="images/fa3.jpg" alt="Site Update">
+          <img src="images/fa3.jpg" alt="Site Update" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>Major Site Update</h3>
             <p>Our website just got a fresh new look and improved navigation for a better user experience. <a href="#">See what's new</a></p>
@@ -126,7 +126,7 @@
           </div>
         </article>
         <article class="press-item">
-          <img src="images/fa2.jpg" alt="New Skills in Owerri">
+          <img src="images/fa2.jpg" alt="New Skills in Owerri" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>New Skills Now in Owerri</h3>
             <p>We have launched new tailoring and digital marketing programs at our Owerri hub. <a href="#">Learn more</a></p>
@@ -139,7 +139,7 @@
           </div>
         </article>
         <article class="press-item">
-          <img src="images/fa1.jpg" alt="Upcoming Event">
+          <img src="images/fa1.jpg" alt="Upcoming Event" loading="lazy" decoding="async" data-fade>
           <div class="press-info">
             <h3>Upcoming: National Skills Expo 2025</h3>
             <p>Join us at the National Skills Expo this September for workshops, networking, and more. <a href="#">Register now</a></p>
@@ -210,9 +210,9 @@
 
       <div class="footer-bottom">
         <div class="payment-methods">
-          <img src="images/visa.jpg" alt="Visa" />
-          <img src="images/mastercard.jpg" alt="Mastercard" />
-          <img src="images/verve.jpg" alt="Verve" />
+          <img src="images/visa.jpg" alt="Visa" loading="lazy" decoding="async" data-fade />
+          <img src="images/mastercard.jpg" alt="Mastercard" loading="lazy" decoding="async" data-fade />
+          <img src="images/verve.jpg" alt="Verve" loading="lazy" decoding="async" data-fade />
         </div>
         <div class="footer-info">
           <p>&copy; 2025 FPNO Skill Acquisition Hub. All rights reserved.</p>
@@ -226,3 +226,26 @@
     </footer>
 </body>
 </html>
+</html>
+<style>
+img[data-fade] {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+img[data-fade].loaded {
+  opacity: 1;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img[data-fade]').forEach(function(img) {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        img.classList.add('loaded');
+      });
+    }
+  });
+});
+</script>

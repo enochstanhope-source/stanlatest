@@ -23,7 +23,7 @@
       <nav>
         <div class="logo" style="display: none;">
           <a href="index.html">
-            <img src="images/polybay.png" alt="G-ONE Logo" width="40logo" height="40" />
+            <img src="images/polybay.png" alt="G-ONE Logo" width="40" height="40" loading="eager" decoding="async" data-fade />
           </a>
         </div>
         <ul class="nav-links">
@@ -43,7 +43,7 @@
   <p style="font-size:1.1rem; color:#ffffff; margin-bottom:0.7rem;">Our journey has been marked by resilience, innovation, and a deep commitment to our mission. We have celebrated countless success stories, witnessed personal growth, and built lasting partnerships. As we look to the future, we remain dedicated to expanding our reach, embracing new technologies, and continuing to make a positive impact on every learner we serve.</p>
       </div>
       <div class="story-img-wrap">
-        <img src="images/abouty.jpg" alt="Our Story" class="hero-img">
+  <img src="images/abouty.jpg" alt="Our Story" class="hero-img" loading="eager" decoding="async" data-fade>
       </div>
     </section>
     <section class="story-content">
@@ -53,7 +53,7 @@
           <p>Our journey began with a vision to make quality education accessible to all. Over the years, we've grown into a vibrant community of learners and educators.</p>
         </div>
         <div class="story-block-img">
-          <img src="images/aa1.jpg" alt="Journey" class="content-img">
+          <img src="images/aa1.jpg" alt="Journey" class="content-img" loading="lazy" decoding="async" data-fade>
         </div>
       </div>
       <div class="story-block">
@@ -62,7 +62,7 @@
           <p>We strive to inspire, educate, and transform lives through innovative learning experiences.</p>
         </div>
         <div class="story-block-img">
-          <img src="images/aa2.jpg" alt="Mission" class="content-img">
+          <img src="images/aa2.jpg" alt="Mission" class="content-img" loading="lazy" decoding="async" data-fade>
         </div>
       </div>
     </section>
@@ -123,9 +123,9 @@
 
       <div class="footer-bottom">
         <div class="payment-methods">
-          <img src="images/visa.jpg" alt="Visa" />
-          <img src="images/mastercard.jpg" alt="Mastercard" />
-          <img src="images/verve.jpg" alt="Verve" />
+          <img src="images/visa.jpg" alt="Visa" loading="lazy" decoding="async" data-fade />
+          <img src="images/mastercard.jpg" alt="Mastercard" loading="lazy" decoding="async" data-fade />
+          <img src="images/verve.jpg" alt="Verve" loading="lazy" decoding="async" data-fade />
         </div>
         <div class="footer-info">
           <p>&copy; 2025 FPNO Skill Acquisition Hub. All rights reserved.</p>
@@ -139,3 +139,26 @@
     </footer>
 </body>
 </html>
+</html>
+<style>
+img[data-fade] {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+img[data-fade].loaded {
+  opacity: 1;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img[data-fade]').forEach(function(img) {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        img.classList.add('loaded');
+      });
+    }
+  });
+});
+</script>
