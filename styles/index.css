@@ -1,154 +1,201 @@
-/* Enroll Button Styling for Product Card */
-.product-card .enroll {
-  display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.75rem 2.5rem;
-  background: linear-gradient(90deg, #212121 0%, #b30000 100%);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-  letter-spacing: 0.5px;
-}
-.product-card .enroll:hover, .product-card .enroll:focus {
-  background: linear-gradient(90deg, #000000 0%, #00ffa2 100%);
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-  outline: none;
-}
 
-@media (max-width: 768px) {
-  .product-card .enroll {
-    width: 90%;
-    font-size: 1rem;
-    padding: 0.7rem 0;
-    margin-top: 1.2rem;
-  }
-}
-@media (max-width: 600px) {
-  .ourteam-mobile-margin {
-    margin-top: 18px !important;
-    margin-bottom: 18px !important;
-  }
-}
-/* Fast image fade-in effect */
-img[data-fade] {
-  opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1);
-}
-img[data-fade].loaded {
-  opacity: 1;
-}
-@media (max-width: 768px) {
-  .collections-2 {
-    margin-top: -2rem !important;
-  }
-}
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: 1fr !important;
-    gap: 0.5rem !important;
-  }
-  .product-card {
-    padding: -7rem -0.5rem !important;
-    margin: 0.7rem 0.7rem 1.2rem 0.7rem !important;
-    max-width: 95vw !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    border-radius: 10px !important;
-    font-size: 0.92rem !important;
-    box-shadow: 0 14px 15px rgba(255, 255, 255, 0.904) !important;
-  }
-  .product-card * {
-    font-size: 0.92rem !important;
-  }
-  .product-card h3 {
-    font-size: 1rem !important;
-  }
- 
-  .product-card img {
-    width: 100% !important;
-    height: 280px !important;
-    object-fit: cover !important;
-  }
-  .product-info h3 {
-    font-size: 1rem !important;
-  }
-  .product-info p,
-  .product-info .course-details,
-  .product-info .product-rating {
-    font-size: 0.92rem !important;
-  }
-  
-}
-@media (max-width: 768px) {
-  .popular-products {
-    margin-top: -8rem !important;
-  }
-}
-@media (max-width: 768px) {
-  .hero {
-    min-height: 70px !important;
-    height: 700px !important;
-    padding: 0 !important;
-  }
-  .slider-container {
-    min-height: 680px !important;
-    height: 50px !important;
-  }
-  .slide img {
-    height: 820px !important;
-    max-height: 570px !important;
-    object-fit: cover !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-content {
-    padding: 1.2rem 0.7rem !important;
-    font-size: 0.92rem !important;
-    max-width: 95vw !important;
-  }
-  .hero-content h1 {
-    font-size: 1.3rem !important;
-    line-height: 1.2 !important;
-  }
-  .hero-content p {
-    font-size: 0.98rem !important;
-    line-height: 1.3 !important;
-  }
-    .hero-content {
-      position: absolute !important;
-      margin-top: -14% !important;
-      left: 0;
-      right: 0;
-      width: 100vw;
-    }
-  }
-
-html, body {
-  overflow-x: hidden !important;
+/* === New Fixed Header & Nav === */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
-  max-width: 100vw;
+  background: #181818;
+  z-index: 10000;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-/* Hamburger/cancel button styles */
-#hamburger-menu-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
+.main-nav {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+}
+.nav-logo img {
+  height: 40px;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links li {
+  position: relative;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: block;
+  white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a:focus {
+  background: #232323;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #232323;
+  min-width: 180px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  z-index: 10001;
+}
+.dropdown li {
+  width: 100%;
+}
+.dropdown a {
+  padding: 0.5rem 1.2rem;
+  color: #fff;
+  font-size: 0.97rem;
+}
+.nav-dropdown:hover > .dropdown, .nav-dropdown:focus-within > .dropdown {
+  display: block;
+}
+.nav-hamburger {
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10002;
 }
+.nav-hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 4px 0;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+/* Hamburger to Cancel animation */
+.nav-hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media (max-width: 900px) {
+  .main-nav {
+    padding: 0.5rem 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .collections-2 .overlay-content {
+    padding: 1rem 0.7rem 0.7rem 0.7rem;
+    font-size: 0.95rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .collections-2 .overlay-content .badge {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+  }
+  .collections-2 .overlay-content h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    word-break: break-word;
+  }
+  .collections-2 .overlay-content p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .collections-2 .overlay-content .view-more {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.7rem;
+    display: inline-block;
+    margin-top: 0.2rem;
+  }
+  .main-header {
+    position: fixed;
+  }
+  .nav-hamburger {
+    display: flex;
+  }
+  .nav-links {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #181818;
+    padding: 1.2rem 1.5rem 2rem 1.5rem;
+    gap: 1.2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    z-index: 10001;
+    overflow-y: auto;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s 2s;
+    opacity: 0;
+  }
+  .nav-links.active {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s;
+  }
+  .nav-links.closing {
+    visibility: hidden;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s 2s;
+  }
+  .nav-dropdown > .dropdown {
+    display: none;
+    position: static;
+    box-shadow: none;
+    background: #222;
+    min-width: 100%;
+    border-radius: 0 0 6px 6px;
+    padding: 0.2rem 0 0.2rem 1rem;
+  }
+  .nav-dropdown.dropdown-open > .dropdown {
+    display: block;
+  }
+  .nav-dropdown > a:after {
+    content: '  >';
+    float: right;
+    margin-left: 0.5em;
+  }
+}
+body { padding-top: 60px; }
+
+/* Enroll Button Styling for Product Card */
 #hamburger-menu-btn span {
   display: block;
   width: 28px;
@@ -177,93 +224,8 @@ html, body {
 #hamburger-menu-btn.cancel-x-btn:focus {
   outline: 2px solid #555;
 }
-/* Desktop Account & Contact links stacked top right */
-@media (min-width: 769px) {
-  #desktop-nav-links-stack {
-    position: absolute;
-    top: 2rem;
-    right: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-    align-items: flex-end;
-    z-index: 1001;
-  }
-  #desktop-nav-links-stack > div {
-    width: max-content;
-    background: rgba(0,0,0,0.18);
-    border-radius: 8px;
-    padding: 0.5rem 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    transition: background 0.2s;
-  }
-  #desktop-nav-links-stack > div:hover {
-    background: rgba(255,255,255,0.08);
-  }
-  #desktop-nav-account .account-link, #desktop-nav-contact .contact-btn {
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.08rem;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  #desktop-nav-account .dropdown-menu, #desktop-nav-contact .dropdown-menu {
-    right: 0;
-    left: auto;
-  }
-}
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden !important;
-    width: 100vw;
-    max-width: 100vw;
-  }
-}
-/* Loader Styles */
-#loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background :linear-gradient(to right, #090028, #150303);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.3s;
-}
 
-.loader-spinner {
-  width: 30px;
-  height: 70px;
-  border-radius: 60%;
-  border: 8px solid #f80000;
-  border-top: 8px solid #020f2f;
-  border-right: 8px solid #020f2f;
-  border-bottom: 8px solid #c80f0f;
-  border-left: 8px solid #d40909;
-  background: linear-gradient(135deg, rgb(216, 8, 8) 0%, rgb(0, 0, 0) 100%);
-  box-shadow: 0 4px 24px 0 rgb(255, 255, 255), 0 1.5px 8px 0 rgba(0,0,0,0.10);
-  animation: spin-zoom 2.8s linear infinite;
-  position: relative;
-}
 
-.loader-spinner::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3498db 60%, #00c3ff 100%);
-  opacity: 0.15;
-  z-index: 1;
-}
 
 @keyframes spin-zoom {
   0% {
@@ -1029,7 +991,16 @@ nav {
 
 @media (max-width: 768px) {
   .popular-products {
-    padding: 3rem 1rem;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+    margin-top: -15.5rem;
+  }
+  .popular-products h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1.2rem;
+    color:#ebebeb; font-weight:400; 
+    text-align: center;
+     letter-spacing:1px;
+       text-shadow:0 6px 8px rgb(255, 255, 255);
   }
   
   .product-grid {
@@ -1572,6 +1543,7 @@ nav {
         margin: 20px;
     }
     
+
     .info-row {
         flex-direction: column;
         gap: 15px;
@@ -1880,6 +1852,78 @@ nav {
   }
 }
 
+/* Responsive breakpoints for different phone sizes */
+@media (max-width: 430px) { /* iPhone 14 Pro Max, 12 Pro Max */
+  .collections-2 .overlay-content {
+    padding: 1rem 0.8rem 0.8rem;
+  }
+  .collections-2 .overlay-content h3 {
+    font-size: 1.1rem;
+  }
+  .collections-2 .overlay-content p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 390px) { /* iPhone 12 Pro, 14 Pro */
+  .collections-2 .overlay-content {
+    padding: 0.9rem 0.7rem 0.7rem;
+  }
+  .collections-2 .overlay-content h3 {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+  }
+  .collections-2 .overlay-content p {
+    font-size: 0.85rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+  }
+  .collections-2 .overlay-content .badge {
+    padding: 0.25rem 0.6rem;
+  }
+}
+
+@media (max-width: 375px) { /* iPhone SE, X, XS */
+  .collections-2 .overlay-content {
+    padding: 0.8rem 0.6rem 0.6rem;
+  }
+  .collections-2 .overlay-content h3 {
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .collections-2 .overlay-content p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+  .collections-2 .overlay-content .badge {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+  }
+  .collections-2 .overlay-content .view-more {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+@media (max-width: 360px) { /* Galaxy S8, Pixel 3 */
+  .collections-2 .overlay-content {
+    padding: 0.7rem 0.5rem 0.5rem;
+  }
+  .collections-2 .overlay-content h3 {
+    font-size: 0.9rem;
+  }
+  .collections-2 .overlay-content p {
+    font-size: 0.75rem;
+    line-height: 1.1;
+  }
+  .collections-2 .overlay-content .view-more {
+    margin-top: 0.1rem;
+  }
+}
+
 /* Footer Styles */
 .footer {
     background:linear-gradient(to top, #450303, #000000) rgba(43, 1, 25, 0.95);
@@ -2139,3 +2183,39 @@ nav {
     transform: translate(-50%, -50%);
   }
 }
+
+/* Responsive: Reduce hero-content font size on mobile */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content span {
+    font-size: 1.2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .slider-container {
+    height: 70vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -24px;
+    
+  }
+   .hero-content {
+      top: 35%;
+      transform: translate(-50%, -40%);
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    .hero-content .shop-now {
+      width: 90vw;
+      max-width: 280px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      font-size: 1rem;
+    }
+  
+}
+

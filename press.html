@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Press</title>
-  <link rel="stylesheet" href="styles/press.css">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/press.css">
+  
   <!-- Font Awesome for icons, loaded like index.html -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   </noscript>
+  <script src="scripts/menu.js" defer></script>
 </head>
 <body>
     <!-- Loader Start -->
@@ -18,20 +20,7 @@
       <div class="loader-spinner"></div>
     </div>
     <!-- Loader End -->
-
-    <header>
-      <nav>
-        <div class="logo" style="display: none;">
-          <a href="index.html">
-            <img src="images/polybay.png" alt="G-ONE Logo" width="40" height="40" loading="eager" decoding="async" data-fade />
-          </a>
-        </div>
-        <ul class="nav-links">
-          <!-- Desktop links removed. Mobile links will be injected by JS. -->
-        </ul>
-        <!-- nav-actions will be injected by JS in mobile mode -->
-      </nav>
-    </header>
+    <!-- Menu will be injected here by menu.js -->
 
   <main class="press-main">
     <section class="press-hero">
@@ -161,7 +150,7 @@
       <div class="footer-content">
         <div class="footer-section">
           <h3>About FPNO Skills Hub</h3>
-         <ul>
+          <ul>
             <li><a href="#" onclick="event.preventDefault(); window.location.href='ourstory.html';"><i class="fas fa-history"></i> Our Story</a></li>
             <li class="ourteam-mobile-margin"><a href="#" onclick="event.preventDefault(); window.location.href='ourteam.html';"><i class="fas fa-users"></i> Our Team</a></li>
             <li><a href="#" onclick="event.preventDefault(); window.location.href='press.html';"><i class="fas fa-newspaper"></i> Press</a></li>
@@ -169,24 +158,22 @@
         </div>
 
         <div class="footer-section">
-          <h3>Student Resources</h3>
+          <h3>Programs</h3>
           <ul>
-            <li><a href="shop.html"><i class="fas fa-book"></i> E-Library</a></li>
-            <li><a href="shop.html"><i class="fas fa-file-alt"></i> Course Materials</a></li>
-            <li><a href="shop.html"><i class="fas fa-video"></i> Video Tutorials</a></li>
-            <li><a href="shop.html"><i class="fas fa-blog"></i> Skills Blog</a></li>
-            <li><a href="shop.html"><i class="fas fa-trophy"></i> Success Stories</a></li>
+            <li><a href="shop.html"><i class="fas fa-book"></i>Digital & Tech Skills</a></li>
+            <li><a href="shop.html"><i class="fas fa-file-alt"></i> Business Skills</a></li>
+            <li><a href="shop.html"><i class="fas fa-video"></i> Vocational Skills</a></li>
+            <li><a href="shop.html"><i class="fas fa-blog"></i> Soft & Employability Skills</a></li>
+            <li><a href="shop.html"><i class="fas fa-trophy"></i> Creative & Multimedia Skills</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
-          <h3>Training Programs</h3>
+          <h3>Contact Us</h3>
           <ul>
-            <li><a href="product.html"><i class="fas fa-certificate"></i> Certificate Programs</a></li>
-            <li><a href="product.html#bestsellers"><i class="fas fa-graduation-cap"></i> Diploma Programs</a></li>
-            <li><a href="product.html#sale"><i class="fas fa-clock"></i> Short Courses</a></li>
-            <li><a href="product.html#collections"><i class="fas fa-tools"></i> Vocational Training</a></li>
-            <li><a href="product.html#sale"><i class="fas fa-lightbulb"></i> Entrepreneurship</a></li>
+            <li><a href="product.html"><i class="fas fa-certificate"></i> Customer Support</a></li>
+            <li><a href="product.html#bestsellers"><i class="fas fa-graduation-cap"></i> Store Locations</a></li>
+            
           </ul>
         </div>
 
@@ -210,9 +197,19 @@
 
       <div class="footer-bottom">
         <div class="payment-methods">
-          <img src="images/visa.jpg" alt="Visa" loading="lazy" decoding="async" data-fade />
-          <img src="images/mastercard.jpg" alt="Mastercard" loading="lazy" decoding="async" data-fade />
-          <img src="images/verve.jpg" alt="Verve" loading="lazy" decoding="async" data-fade />
+          <picture>
+            <img src="images/visa.jpg" alt="Visa" />
+          </picture>
+          <picture>
+            <img src="images/mastercard.jpg" alt="Mastercard" />
+          </picture>
+          <picture>
+            <img src="images/verve.jpg" alt="Verve" />
+          </picture>
+  <!-- Preload above-the-fold hero images (WebP preferred) -->
+  <link rel="preload" href="images/serious1.webp" as="image" type="image/webp" />
+  <link rel="preload" href="images/seriuu.webp" as="image" type="image/webp" />
+  <link rel="preload" href="images/me7.webp" as="image" type="image/webp" />
         </div>
         <div class="footer-info">
           <p>&copy; 2025 FPNO Skill Acquisition Hub. All rights reserved.</p>
