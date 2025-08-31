@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  .ourteam-mobile-margin {
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+  }
+}
 /* Animation for zoom-in effect */
 /* Our Story Page Styles */
 

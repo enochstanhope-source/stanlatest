@@ -193,19 +193,7 @@ function createHamburger() {
 							});
 						}, 0);
 
-						// Courses
-						const coursesLi = document.createElement('li');
-						coursesLi.className = 'nav-dropdown';
-						coursesLi.innerHTML = `
-							<a href="#product">Courses <i class="fas fa-chevron-down"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="product.html"><i class="fas fa-certificate"></i> Certificate Programs</a></li>
-								<li><a href="product.html#bestsellers"><i class="fas fa-graduation-cap"></i> Diploma Programs</a></li>
-								<li><a href="product.html#sale"><i class="fas fa-clock"></i> Short Courses</a></li>
-										<li><a href="product.html#collections"><i class="fas fa-tools"></i> Vocational Training</a></li>
-										<li><a href="product.html#sale"><i class="fas fa-lightbulb"></i> Entrepreneurship</a></li>
-									</ul>
-								`;
+						// Courses menu removed
 
 								// Programs
 								const programsLi = document.createElement('li');
@@ -213,10 +201,11 @@ function createHamburger() {
 								programsLi.innerHTML = `
 									<a href="#testimonial">Programs <i class="fas fa-chevron-down"></i></a>
 									<ul class="dropdown-menu">
-										<li><a href="testimonial.html"><i class="fas fa-briefcase"></i> Internship Programs</a></li>
-										<li><a href="testimonial.html"><i class="fas fa-cogs"></i> Workings</a></li>
-										<li><a href="testimonial.html"><i class="fas fa-chalkboard-teacher"></i> Mentorship</a></li>
-										<li><a href="testimonial.html"><i class="fas fa-building"></i> Industry Partners</a></li>
+																		<li><a href="testimonial.html"><i class="fas fa-laptop-code"></i> Digital & Tech Skills</a></li>
+																		<li><a href="testimonial.html"><i class="fas fa-briefcase"></i> Business Skills</a></li>
+																		<li><a href="testimonial.html"><i class="fas fa-tools"></i> Vocational Skills</a></li>
+																		<li><a href="testimonial.html"><i class="fas fa-user-tie"></i> Soft & Employability Skills</a></li>
+																		<li><a href="testimonial.html"><i class="fas fa-paint-brush"></i> Creative & Multimedia Skills</a></li>
 									</ul>
 								`;
 
@@ -261,12 +250,7 @@ function createHamburger() {
 													<li>
 														<a href="contact.html"><i class="fas fa-location-dot"></i> Store Locations</a>
 													</li>
-													<li>
-														<a href="contact.html"><i class="fas fa-handshake"></i> Business Inquiries</a>
-													</li>
-													<li>
-														<a href="contact.html"><i class="fas fa-message"></i> Contact Form</a>
-													</li>
+													
 												</ul>
 											</div>
 									`;
@@ -275,7 +259,6 @@ function createHamburger() {
 								// Append all links in order
 								navLinks.appendChild(homeLi);
 								navLinks.appendChild(aboutLi);
-								navLinks.appendChild(coursesLi);
 								navLinks.appendChild(programsLi);
 								navLinks.appendChild(mobileContactLi);
 								navLinks.appendChild(mobileAccountLi);
