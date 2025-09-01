@@ -1,6 +1,48 @@
 // Function to inject the mobile menu into any page
 function injectMobileMenu() {
     const menuHTML = `
+    <style>
+      @media (max-width: 768px) {
+        .main-header {
+          position: fixed;
+          width: 100vw;
+          top: 0;
+          left: 0;
+          z-index: 10000;
+        }
+        .main-nav {
+          background: #181818;
+        }
+        .nav-links {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: #181818;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding-top: 80px;
+          transform: translateY(-100%);
+          transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s 2s;
+          opacity: 1;
+          visibility: hidden;
+        }
+        .nav-links.active {
+          visibility: visible;
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s;
+        }
+        .nav-links.closing {
+          visibility: hidden;
+          transform: translateX(100%);
+          opacity: 1;
+          transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s 2s;
+        }
+      }
+    </style>
     <header class="main-header">
       <nav class="main-nav">
         <div class="nav-logo">
@@ -55,23 +97,38 @@ function injectMobileMenu() {
     const navHamburger = document.getElementById('navHamburger');
     const navLinks = document.getElementById('navLinks');
 
-    navHamburger.addEventListener('click', () => {
-        navHamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+  let menuOpen = false;
+  navHamburger.addEventListener('click', () => {
+    navHamburger.classList.toggle('active');
+    if (!menuOpen) {
+      navLinks.classList.add('active');
+      navLinks.classList.remove('closing');
+      menuOpen = true;
+    } else {
+      navLinks.classList.remove('active');
+      navLinks.classList.add('closing');
+      setTimeout(() => {
+        navLinks.classList.remove('closing');
+        menuOpen = false;
+      }, 2000); // match transition duration
+    }
+  });
 
-    // Add click event listeners to dropdown menus
-    const dropdowns = document.querySelectorAll('.nav-dropdown');
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) { // Only for mobile view
-                const dropdownContent = this.querySelector('.dropdown');
-                dropdownContent.style.display = 
-                    dropdownContent.style.display === 'block' ? 'none' : 'block';
-                e.preventDefault();
-            }
-        });
-    });
+  // Add click event listeners to dropdown parent links only
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(dropdown => {
+    const parentLink = dropdown.querySelector('a[href="#"]');
+    if (parentLink) {
+      parentLink.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) { // Only for mobile view
+          const dropdownContent = dropdown.querySelector('.dropdown');
+          dropdownContent.style.display = 
+            dropdownContent.style.display === 'block' ? 'none' : 'block';
+          e.preventDefault(); // Only prevent default for parent link
+        }
+      });
+    }
+  });
 }
 
 // Call this function when the DOM is loaded
