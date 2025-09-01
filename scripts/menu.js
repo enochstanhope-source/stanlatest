@@ -20,7 +20,7 @@ function injectMobileMenu() {
           left: 0;
           width: 100vw;
           height: 100vh;
-          background: linear-gradient(to bottom, #010939ff, #610210ff);
+          background: linear-gradient(to bottom, #000000ff, #610210ff);
           flex-direction: column;
           justify-content: flex-start;
           align-items: flex-start;
@@ -43,6 +43,12 @@ function injectMobileMenu() {
           opacity: 0;
           transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s 2s;
         }
+        .nav-dropdown {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
         .account-btn {
          background: linear-gradient(to bottom, #000000ff, #3f020bff);
           border: none;
@@ -50,13 +56,13 @@ function injectMobileMenu() {
           cursor: pointer;
           padding: 5px 37px;
           border-radius: 9px;
-          line-height: 1.5;
+          line-height: 0.5;
           margin-bottom: 12px;
           box-shadow: 0 2px 12px -2px rgba(205, 26, 26, 0.81);
+          
+        
         }
 
-        }
-          
         .account-btn1 {
           background: linear-gradient(to bottom, #d3d3d3ff, #ff1a1aff);
           border: none;
@@ -64,8 +70,9 @@ function injectMobileMenu() {
           cursor: pointer;
           padding: 5px 15px;
           border-radius: 9px;
-          line-height: 1.5;
-          padding: 5px 37px;
+          line-height: 0.5;
+          padding: 5px 59px;
+          
           
         }
         
