@@ -20,7 +20,7 @@ function injectMobileMenu() {
           left: 0;
           width: 100vw;
           height: 100vh;
-          background: #130f0fff;
+          background: linear-gradient(to bottom, #010939ff, #610210ff);
           flex-direction: column;
           justify-content: flex-start;
           align-items: flex-start;
@@ -29,6 +29,7 @@ function injectMobileMenu() {
           transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s 2s;
           opacity: 1;
           visibility: hidden;
+          
         }
         .nav-links.active {
           visibility: visible;
@@ -43,21 +44,31 @@ function injectMobileMenu() {
           transition: transform 2s ease-in-out, opacity 2s ease-in-out, visibility 0s 2s;
         }
         .account-btn {
-          background: linear-gradient(to bottom, #06001c, #c6bebeff);
+         background: linear-gradient(to bottom, #000000ff, #3f020bff);
           border: none;
           color: white;
           cursor: pointer;
-          padding: 5px 15px;
-          border-radius: 5px;
+          padding: 5px 37px;
+          border-radius: 9px;
+          line-height: 1.5;
+          margin-bottom: 12px;
+          box-shadow: 0 2px 12px -2px rgba(205, 26, 26, 0.81);
         }
+
+        }
+          
         .account-btn1 {
-          background: linear-gradient(to bottom, #06001c, #ff1a1aff);
+          background: linear-gradient(to bottom, #d3d3d3ff, #ff1a1aff);
           border: none;
           color: white;
           cursor: pointer;
           padding: 5px 15px;
-          border-radius: 5px;
+          border-radius: 9px;
+          line-height: 1.5;
+          padding: 5px 37px;
+          
         }
+        
         .nav-links li > a {
           display: none;
         }
@@ -65,37 +76,31 @@ function injectMobileMenu() {
           display: block;
         }
         .dropdown {
+          all: initial;
           position: static;
-          margin: 25px 20px;
-          background: linear-gradient(135deg, rgba(30,30,45,0.85) 0%, rgba(80,15,35,0.78) 100%);
-          backdrop-filter: blur(55px) saturate(220%) brightness(1.15);
-          -webkit-backdrop-filter: blur(55px) saturate(220%) brightness(1.15);
-          border-radius: 28px;
-          box-shadow: 0 20px 50px -5px rgba(20,20,35,0.35), 
-                     0 8px 20px -4px rgba(80,15,35,0.22),
-                     inset 0 0 0 1px rgba(255,255,255,0.08);
-          padding: 32px;
-          min-width: 240px;
-          color: #f8f8ff;
-          font-family: 'SF Pro Display', 'Inter', system-ui, -apple-system, sans-serif;
-          font-weight: 450;
-          letter-spacing: 0.025em;
+          display: block;
+          background: none !important;
+          margin: 0;
+          padding: 0;
           z-index: 10001;
+          
         }
         .dropdown li a {
+            margin-top: 14px;
+            
             color: #fff;
             padding: 12px 16px;
             display: flex;
             align-items: center;
             text-decoration: none;
             border-radius: 22px;
-            font-size: 0.88rem;
+            font-size: 0.75rem;
             letter-spacing: 0.04em;
             font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
             font-weight: 500;
             margin-bottom: 12px;
-            background: linear-gradient(120deg, #410808 0%, #f8a9a9 100%);
-            box-shadow: 0 2px 12px -2px rgba(90, 90, 90, 0.81);
+            background: linear-gradient(120deg, #410808 0%, #aa0f0fff 100%);
+            box-shadow: 0 2px 12px -2px rgba(205, 26, 26, 0.81);
             border: 1px solid rgba(186, 35, 35, 0.66);
             transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
             position: relative;
@@ -105,14 +110,14 @@ function injectMobileMenu() {
             background: linear-gradient(120deg, #f8a9a9 0%, #410808 100%);
             color: #fff;
             transform: scale(1.04);
-            box-shadow: 0 4px 24px -4px rgba(80,15,35,0.22);
+            box-shadow: 0 4px 24px -4px rgba(208, 255, 0, 0.22);
             border: 1px solid rgba(255,255,255,0.18);
         }
         .dropdown li a:active {
           background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 100%);
           color: #ffffff;
           transform: translateX(8px) scale(1.03);
-          box-shadow: 0 4px 20px -4px rgba(80,15,35,0.18),
+          box-shadow: 0 4px 20px -4px rgba(255, 0, 76, 0.18),
                      inset 0 0 0 1px rgba(255,255,255,0.12);
           letter-spacing: 0.04em;
         }
@@ -128,29 +133,18 @@ function injectMobileMenu() {
           display: block !important;
         }
         .dropdown {
+          all: initial;
           position: absolute;
+          display: block;
           top: 100%;
-          left: -20px;
-          margin-top: 25px;
-          background: linear-gradient(135deg, rgba(30,30,45,0.85) 0%, rgba(80,15,35,0.78) 100%);
-          backdrop-filter: blur(55px) saturate(220%) brightness(1.15);
-          -webkit-backdrop-filter: blur(55px) saturate(220%) brightness(1.15);
-          border-radius: 28px;
-          box-shadow: 0 20px 50px -5px rgba(20,20,35,0.35), 
-                     0 8px 20px -4px rgba(80,15,35,0.22),
-                     inset 0 0 0 1px rgba(255,255,255,0.08);
-          padding: 32px;
-          min-width: 280px;
-          color: #f8f8ff;
-          font-family: 'SF Pro Display', 'Inter', system-ui, -apple-system, sans-serif;
-          font-weight: 450;
-          letter-spacing: 0.025em;
+          left: 0;
+          background: none !important;
+          margin: 0;
+          padding: 0;
           opacity: 0;
-          transform: translateY(-40px) scale(0.96);
-          transform-origin: top center;
           pointer-events: none;
-          transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-          clip-path: inset(0px -50px -50px -50px);
+          transform: translateY(-40px);
+          transition: all 0.3s ease;
         }
         .nav-dropdown:hover > .dropdown, .nav-dropdown:focus-within > .dropdown {
           opacity: 1;
@@ -169,8 +163,8 @@ function injectMobileMenu() {
           font-family: inherit;
           font-weight: 450;
           margin-bottom: 12px;
-          background: rgba(255, 0, 0, 0.03);
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);
+          background: linear-gradient(to bottom, #000000ff, #3f020bff);
+          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
           backdrop-filter: blur(10px);
           transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           position: relative;
@@ -264,7 +258,7 @@ function injectMobileMenu() {
     }
   });
 
-  // Add click event listeners to dropdown parent links only
+  // Add click event listeners to dropdown parent links only (mobile only)
   const dropdowns = document.querySelectorAll('.nav-dropdown');
   dropdowns.forEach(dropdown => {
     const parentLink = dropdown.querySelector('a[href="#"]');
