@@ -1,3 +1,51 @@
+.enroll {
+    background: linear-gradient(135deg, #1a1a1a, #e82a2a);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    border-image: linear-gradient(135deg, #ff0000, #2d0707) 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.enroll::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff0000, #2d0707);
+    z-index: -1;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.enroll:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.15);
+    border-image: linear-gradient(135deg, #ff0000, #ff0000) 1;
+}
+
+.enroll:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.enroll:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(255, 0, 0, 0.1);
+}
 
 /* === New Fixed Header & Nav === */
 .main-header {
@@ -2116,7 +2164,8 @@ nav {
   z-index: 10;
   width: 90%;
   max-width: 1000px;
-  padding: 0.1rem;
+  padding-top: 20px;
+  padding-bottom: 30px;
   background: rgba(96, 96, 96, 0);
   border-radius: 20px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -2216,6 +2265,11 @@ nav {
       padding-right: 0.5rem;
       font-size: 1rem;
     }
+    
   
 }
+
+
+
+
 

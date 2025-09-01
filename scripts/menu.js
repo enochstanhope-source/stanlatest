@@ -1,6 +1,6 @@
 // Function to inject the mobile menu into any page
 function injectMobileMenu() {
-    const menuHTML = `
+  const menuHTML = `
     <style>
       @media (max-width: 768px) {
         .main-header {
@@ -9,9 +9,10 @@ function injectMobileMenu() {
           top: 0;
           left: 0;
           z-index: 10000;
+          background: linear-gradient(to bottom, #000000ff, #3f020bff);
         }
         .main-nav {
-          background: #181818;
+         background: linear-gradient(to bottom, #000000ff, #3f020bff);
         }
         .nav-links {
           position: fixed;
@@ -117,11 +118,14 @@ function injectMobileMenu() {
         }
       }
       @media (min-width: 769px) {
+        .main-header {
+          background: linear-gradient(to bottom, #000000ff, #3f020bff);
+        }
         .nav-links li > button {
-          display: none;
+          display: none !important;
         }
         .nav-links li > a {
-          display: block;
+          display: block !important;
         }
         .dropdown {
           position: absolute;
@@ -148,7 +152,7 @@ function injectMobileMenu() {
           transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
           clip-path: inset(0px -50px -50px -50px);
         }
-        .nav-dropdown:hover > .dropdown {
+        .nav-dropdown:hover > .dropdown, .nav-dropdown:focus-within > .dropdown {
           opacity: 1;
           transform: translateY(0) scale(1);
           pointer-events: auto;
@@ -208,11 +212,11 @@ function injectMobileMenu() {
             <a href="#">Programs</a>
             <button class="account-btn"><a href="#">Programs</a></button>
             <ul class="dropdown">
-              <li><a href="testimonial.html">Digital & Tech Skills</a></li>
-              <li><a href="testimonial.html">Business Skills</a></li>
-              <li><a href="testimonial.html">Vocational Skills</a></li>
-              <li><a href="testimonial.html">Soft & Employability Skills</a></li>
-              <li><a href="testimonial.html">Creative & Multimedia Skills</a></li>
+              <li><a href="digital.html">Digital & Tech Skills</a></li>
+              <li><a href="business.html">Business Skills</a></li>
+              <li><a href="vocational.html">Vocational Skills</a></li>
+              <li><a href="soft-skills.html">Soft & Employability Skills</a></li>
+              <li><a href="creative.html">Creative & Multimedia Skills</a></li>
             </ul>
           </li>
           <li class="nav-dropdown">
@@ -236,12 +240,12 @@ function injectMobileMenu() {
     </header>
     `;
 
-    // Insert the menu at the beginning of the body
-    document.body.insertAdjacentHTML('afterbegin', menuHTML);
+  // Insert the menu at the beginning of the body
+  document.body.insertAdjacentHTML('afterbegin', menuHTML);
 
-    // Add event listeners for mobile menu functionality
-    const navHamburger = document.getElementById('navHamburger');
-    const navLinks = document.getElementById('navLinks');
+  // Add event listeners for mobile menu functionality
+  const navHamburger = document.getElementById('navHamburger');
+  const navLinks = document.getElementById('navLinks');
 
   let menuOpen = false;
   navHamburger.addEventListener('click', () => {
@@ -265,10 +269,10 @@ function injectMobileMenu() {
   dropdowns.forEach(dropdown => {
     const parentLink = dropdown.querySelector('a[href="#"]');
     if (parentLink) {
-      parentLink.addEventListener('click', function(e) {
+      parentLink.addEventListener('click', function (e) {
         if (window.innerWidth <= 768) { // Only for mobile view
           const dropdownContent = dropdown.querySelector('.dropdown');
-          dropdownContent.style.display = 
+          dropdownContent.style.display =
             dropdownContent.style.display === 'block' ? 'none' : 'block';
           e.preventDefault(); // Only prevent default for parent link
         }
