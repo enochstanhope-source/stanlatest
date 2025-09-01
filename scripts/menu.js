@@ -9,10 +9,10 @@ function injectMobileMenu() {
           top: 0;
           left: 0;
           z-index: 10000;
-          background: linear-gradient(to bottom, #000000ff, #3f020bff);
+          background: linear-gradient(to bottom, #080129ff, #000000ff);
         }
         .main-nav {
-         background: linear-gradient(to bottom, #000000ff, #3f020bff);
+         background: linear-gradient(to bottom, #080129ff, #000000ff);
         }
         .nav-links {
           position: fixed;
@@ -216,8 +216,8 @@ function injectMobileMenu() {
               <li><a href="digital.html">Digital & Tech Skills</a></li>
               <li><a href="business.html">Business Skills</a></li>
               <li><a href="vocational.html">Vocational Skills</a></li>
-              <li><a href="soft-skills.html">Soft & Employability Skills</a></li>
-              <li><a href="creative.html">Creative & Multimedia Skills</a></li>
+              <li><a href="soft.html">Soft & Employability Skills</a></li>
+              
             </ul>
           </li>
           <li class="nav-dropdown">
