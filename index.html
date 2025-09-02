@@ -6,10 +6,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>G-ONE- Summer Collections 2025</title>
+    <link rel="shortcut icon" href="images/fa1.jpg" type="image/jpeg">
+    <title>Skill Hub - Where Innovation Begins</title>
     <meta
       name="description"
-      content="G-ONE Summer Collections 2025 - Premium Footwear Collection"
+      content="Skill Hub - Empowering the Next Generation of Innovators"
     />
 
     <!-- Resource hints for critical assets -->
@@ -25,6 +26,8 @@
 
     <!-- Critical CSS -->
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/newsletter.css" />
+    <link rel="stylesheet" href="styles/modal.css" />
 
     <!-- Optimized font loading -->
     <link
@@ -65,6 +68,8 @@
     <script src="scripts/cart.js" defer></script>
     <script src="scripts/menu.js" defer></script>
     <script src="scripts/enrollment.js" defer></script>
+    <script src="scripts/newsletter.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
 
     <!-- Image lazy loading setup -->
     <script>
@@ -334,10 +339,20 @@
           </div>
           <div class="newsletter">
             <h4>Get Updates on New Courses</h4>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Enter your email" required />
-              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            <form class="newsletter-form" id="newsletterForm">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                pattern="[a-z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com)$"
+                title="Please enter a valid email address (gmail.com, yahoo.com, outlook.com, or hotmail.com)"
+                required 
+              />
+              <button type="submit" id="submitBtn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <span class="sending-text">Sending...</span>
             </form>
+            <div class="newsletter-message" id="newsletterMessage"></div>
           </div>
         </div>
       </div>
@@ -361,8 +376,8 @@
         <div class="footer-info">
           <p>&copy; 2025 FPNO Skill Acquisition Hub. All rights reserved.</p>
           <div class="footer-links">
-            <a href="#"><i class="fas fa-user-shield"></i> Privacy Policy</a>
-            <a href="#"><i class="fas fa-balance-scale"></i> Terms of Service</a>
+            <a href="#" data-modal="privacyPolicyModal"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+            <a href="#" data-modal="termsModal"><i class="fas fa-balance-scale"></i> Terms of Service</a>
             <a href="#"><i class="fas fa-universal-access"></i> Accessibility</a>
           </div>
         </div>

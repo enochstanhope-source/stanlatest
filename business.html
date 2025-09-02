@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+<!DOCT  <link   <script src="scripts/menu.js" defer></script>
+  <script src="scripts/enrollment.js" defer></script>
+  <script src="scripts/newsletter.js" defer></script>
+  <script src="scripts/modal.js" defer></script>l="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/business.css">
+  <link rel="stylesheet" href="styles/newsletter.css">E html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Business Skills</title>
+	<link rel="icon" type="image/x-icon" href="images/fav.ico" />
+	<title>Business Excellence - Building Tomorrow's Leaders</title>
 	<link rel="stylesheet" href="styles/index.css">
 	<link rel="stylesheet" href="styles/business.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'" />
@@ -417,7 +423,7 @@
         </div>
 			</section>
 	</main>
-	 <footer class="footer">
+	<footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
           <h3>About FPNO Skills Hub</h3>
@@ -458,10 +464,20 @@
           </div>
           <div class="newsletter">
             <h4>Get Updates on New Courses</h4>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Enter your email" required />
-              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            <form class="newsletter-form" id="newsletterForm">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                pattern="[a-z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com)$"
+                title="Please enter a valid email address (gmail.com, yahoo.com, outlook.com, or hotmail.com)"
+                required 
+              />
+              <button type="submit" id="submitBtn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <span class="sending-text">Sending...</span>
             </form>
+            <div class="newsletter-message" id="newsletterMessage"></div>
           </div>
         </div>
       </div>
@@ -485,8 +501,8 @@
         <div class="footer-info">
           <p>&copy; 2025 FPNO Skill Acquisition Hub. All rights reserved.</p>
           <div class="footer-links">
-            <a href="#"><i class="fas fa-user-shield"></i> Privacy Policy</a>
-            <a href="#"><i class="fas fa-balance-scale"></i> Terms of Service</a>
+            <a href="#" data-modal="privacyPolicyModal"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+            <a href="#" data-modal="termsModal"><i class="fas fa-balance-scale"></i> Terms of Service</a>
             <a href="#"><i class="fas fa-universal-access"></i> Accessibility</a>
           </div>
         </div>
