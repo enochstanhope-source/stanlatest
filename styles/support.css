@@ -5,6 +5,12 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+.form-header i,
+    .form-field label i,
+    .form-footer i,
+    .button-group button i {
+        color: #0682ff !important;
+    }
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -12,7 +18,7 @@
     .form-field label i,
     .form-footer i,
     .button-group button i {
-        color: #fff !important;
+        color: #0682ff !important;
     }
     body {
         padding: 16px;

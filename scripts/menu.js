@@ -225,7 +225,7 @@ function injectMobileMenu() {
             <button class="account-btn"><a href="#">Contact Us</a></button>
             <ul class="dropdown">
               <li><a href="support.html">Customer Support</a></li>
-              <li><a href="support.html">Store Locations</a></li>
+              <li><a href="map.html">Store Locations</a></li>
             </ul>
           </li>
           <li class="nav-dropdown">
