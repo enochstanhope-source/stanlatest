@@ -64,3 +64,43 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 });
+
+// === Hero Section Slider ===
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderTrack = document.querySelector('.slider-track');
+  const slides = document.querySelectorAll('.slider-track .slide');
+  let currentIndex = 0;
+  const slideCount = slides.length;
+
+  function updateSlideWidth() {
+    // Responsive slide width
+    return slides[0].offsetWidth;
+  }
+
+  function goToSlide(index) {
+    const slideWidth = updateSlideWidth();
+    sliderTrack.style.transform = `translateX(-${index * slideWidth}px)`;
+  }
+
+  // Ensure smooth transition
+  sliderTrack.style.transition = 'transform 1s cubic-bezier(0.4,0,0.2,1)';
+
+  function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= slideCount) {
+      currentIndex = 0;
+    }
+    goToSlide(currentIndex);
+  }
+
+  // Initial position
+  goToSlide(currentIndex);
+
+  // Auto-slide every 2.5 seconds
+  setInterval(nextSlide, 2500);
+
+  // Recalculate slide width on window resize for mobile responsiveness
+  window.addEventListener('resize', function () {
+    goToSlide(currentIndex);
+  });
+});
