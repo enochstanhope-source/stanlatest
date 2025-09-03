@@ -15,6 +15,21 @@
 	<script src="scripts/signup.js" defer></script>
 </head>
 <body>
+	<!-- Signup Success Modal Overlay -->
+	<div id="signupSuccessModal" class="signup-success-modal" style="display:none;">
+		<div class="signup-success-modal-content">
+			<div class="loader-spinner">
+				<svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+					<circle cx="24" cy="24" r="20" stroke="#3f020b" stroke-width="6" opacity="0.2"/>
+					<circle cx="24" cy="24" r="20" stroke="#ff1a1a" stroke-width="6" stroke-dasharray="100" stroke-dashoffset="60" style="animation:spinSvg 1s linear infinite;"/>
+				</svg>
+			</div>
+			<div class="loader-progress-bar">
+				<div class="loader-progress"></div>
+			</div>
+			<div class="loader-label">Creating your account...</div>
+		</div>
+	</div>
 	<a href="index.html" class="back-home-btn">&larr; Back to Home</a>
 	<div class="logo" style="position: absolute; left: 50%; top: 40px; transform: translateX(-50%); z-index: 10;">
 		<a href="index.html">
@@ -58,6 +73,24 @@
 			});
 		}
 	});
+
+// Loader modal logic
+function showSignupLoader() {
+	const modal = document.getElementById('signupSuccessModal');
+	if (modal) {
+		modal.style.display = 'flex';
+		// Animate progress bar
+		const progress = modal.querySelector('.loader-progress');
+		if (progress) {
+			progress.style.width = '0%';
+			setTimeout(() => { progress.style.width = '100%'; }, 100);
+		}
+	}
+}
+function hideSignupLoader() {
+	const modal = document.getElementById('signupSuccessModal');
+	if (modal) modal.style.display = 'none';
+}
 </script>
 
 		</form>

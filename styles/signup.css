@@ -1,3 +1,70 @@
+/* Signup Success Modal Overlay Styles */
+.signup-success-modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(30, 30, 60, 0.45);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px) saturate(180%);
+}
+.signup-success-modal-content {
+    background: rgba(255,255,255,0.18);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px #3f020b44;
+    padding: 44px 56px;
+    min-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    animation: popCheck 0.7s ease;
+}
+.loader-spinner {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #3f020b22;
+    margin-bottom: 18px;
+}
+.loader-progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #fff8;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 6px #3f020b22;
+}
+.loader-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff1a1a 0%, #3f020b 100%);
+    border-radius: 8px;
+    transition: width 2.5s cubic-bezier(.4,2,.3,1);
+}
+.loader-label {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #3f020b;
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 12px #fff8, 0 1px 0 #fff;
+    margin-top: 8px;
+}
+@keyframes spinSvg {
+    100% { stroke-dashoffset: 0; transform: rotate(360deg); }
+}
+@keyframes popCheck {
+    0% {transform: scale(7.5); opacity:0;}
+    80% {transform: scale(3.1); opacity:1;}
+    100% {transform: scale(1); opacity:1;}
+}
 /* Move signup-container down for mobile and small screens */
 @media (max-width: 600px) {
     .signup-container {
