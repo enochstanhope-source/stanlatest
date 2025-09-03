@@ -7,10 +7,24 @@
 	<link rel="shortcut icon" href="images/fa1.jpg" type="image/jpeg">
 	<title>Welcome Back - Secure Access Portal</title>
 	<link rel="stylesheet" href="styles/signup.css">
+	<link rel="stylesheet" href="styles/loader.css">
 	
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <!-- Your custom JavaScript -->
+    <script src="scripts/login.js" defer></script>
 </head>
 <body>
 	<!-- Menu will be injected here by menu.js -->
+	<div class="loader-container">
+		<div class="loader">
+			<div class="loader-circle"></div>
+			<svg class="loader-tick" viewBox="0 0 24 24">
+				<path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+			</svg>
+		</div>
+	</div>
 	<a href="index.html" class="back-home-btn">&larr; Back to Home</a>
 	<div class="logo" style="position: absolute; left: 50%; top: 40px; transform: translateX(-50%); z-index: 10;">
 		<a href="index.html">
@@ -19,7 +33,7 @@
 	</div>
 	<div class="signup-container">
 		<button type="button" class="cancel-x-btn" aria-label="Cancel">&times;</button>
-		<form class="signup-form">
+	<form class="signup-form" id="loginForm">
 			<h2>Welcome, Back</h2>
 			<div class="form-fields">
 			

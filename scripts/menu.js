@@ -282,5 +282,46 @@ function injectMobileMenu() {
   });
 }
 
+// Function to update account menu based on auth state
+function updateAccountMenu(user) {
+  const accountDropdown = document.querySelector('.nav-dropdown:last-child .dropdown');
+  if (!accountDropdown) return;
+
+  if (user) {
+    // User is signed in
+    accountDropdown.innerHTML = `
+      <li><a href="#" id="signOutBtn">Sign Out</a></li>
+    `;
+    
+    // Add sign out functionality
+    const signOutBtn = document.getElementById('signOutBtn');
+    if (signOutBtn) {
+      signOutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        firebase.auth().signOut().then(() => {
+          window.location.href = 'index.html';
+        }).catch((error) => {
+          console.error('Sign Out Error', error);
+        });
+      });
+    }
+  } else {
+    // User is signed out
+    accountDropdown.innerHTML = `
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+    `;
+  }
+}
+
 // Call this function when the DOM is loaded
-document.addEventListener('DOMContentLoaded', injectMobileMenu);
+document.addEventListener('DOMContentLoaded', () => {
+  injectMobileMenu();
+  
+  // Add Firebase auth state observer
+  if (typeof firebase !== 'undefined' && firebase.auth) {
+    firebase.auth().onAuthStateChanged((user) => {
+      updateAccountMenu(user);
+    });
+  }
+});

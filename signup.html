@@ -8,9 +8,13 @@
 	<title>Join Us - Begin Your Journey</title>
 	<link rel="stylesheet" href="styles/signup.css">
 	
+	<!-- Firebase SDK -->
+	<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+	<!-- Your custom JavaScript -->
+	<script src="scripts/signup.js" defer></script>
 </head>
 <body>
-	<!-- Menu will be injected here by menu.js -->
 	<a href="index.html" class="back-home-btn">&larr; Back to Home</a>
 	<div class="logo" style="position: absolute; left: 50%; top: 40px; transform: translateX(-50%); z-index: 10;">
 		<a href="index.html">
@@ -19,7 +23,7 @@
 	</div>
 	<div class="signup-container">
 		<button type="button" class="cancel-x-btn" aria-label="Cancel">&times;</button>
-		<form class="signup-form">
+	<form class="signup-form" id="signupForm">
 			<h2>Sign Up</h2>
 			<div class="form-fields">
 				<div class="input-group">

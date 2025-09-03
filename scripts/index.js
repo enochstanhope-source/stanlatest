@@ -1,5 +1,27 @@
+// Function to update hero content based on auth state
+function updateHeroContent(user) {
+  const heroText = document.querySelector('.hero-content p');
+  const startButton = document.querySelector('.hero-content .shop-now');
+  
+  if (user) {
+    // User is signed in
+    heroText.textContent = "Explore";
+    startButton.textContent = "Explore";
+  } else {
+    // User is signed out
+    heroText.textContent = "Unlock your potential at Federal Polytechnic Nekede's premier Skill Acquisition Hub. Expert-led training in digital technology, entrepreneurship, vocational skills, and professional development. Your journey to success starts here.";
+    startButton.textContent = "Start Learning Today";
+  }
+}
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function () {
+  // Add Firebase auth state observer
+  if (typeof firebase !== 'undefined' && firebase.auth) {
+    firebase.auth().onAuthStateChanged((user) => {
+      updateHeroContent(user);
+    });
+  }
 	const hamburgerBtn = document.getElementById('navHamburger');
 	const navLinks = document.getElementById('navLinks');
 	const dropdownParents = document.querySelectorAll('.nav-dropdown');

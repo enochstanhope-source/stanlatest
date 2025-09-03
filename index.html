@@ -16,6 +16,22 @@
     <!-- Resource hints for critical assets -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script>
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyA9-SeBMqujxMleatSd23FM5vlLWdOVUPA",
+        authDomain: "grandpa-523e1.firebaseapp.com",
+        projectId: "grandpa-523e1",
+        storageBucket: "grandpa-523e1.firebasestorage.app",
+        messagingSenderId: "1049062266843",
+        appId: "1:1049062266843:web:6f8b23c5a1f20a7836f9fe"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
 
     <link rel="preload" href="images/power.mp4" as="video" type="video/mp4" />
     <link rel="preload" href="images/shoeee.jpg" as="image" type="image/jpeg" />
