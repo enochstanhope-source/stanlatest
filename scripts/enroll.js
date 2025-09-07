@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = `Good day sir,\nI'm ${firstName} ${lastName}.\nI want to enroll for the ${course}.\nWhat's the next move?`;
 
         // Create WhatsApp URL with the new phone number
-        const whatsappUrl = `https://wa.me/2348023464677?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/2347035474918?text=${encodeURIComponent(message)}`;
 
         // Add loading state to button
         sendRequestBtn.disabled = true;
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = `Good day sir ! I am ${fullName} contacting from the website and i'm interested in ${course} needing your reply on it soon thanks`;
 
         // Create WhatsApp URL
-        const whatsappUrl = `https://wa.me/2349162919586?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/2347035474918?text=${encodeURIComponent(message)}`;
 
         // Simulate loading for better UX
         setTimeout(() => {
